@@ -1,4 +1,5 @@
 const createExpoWebpackConfigAsync = require('@expo/webpack-config');
+const path = require('path');
 
 module.exports = async function(env, argv) {
   const config = await createExpoWebpackConfigAsync(
@@ -13,29 +14,15 @@ module.exports = async function(env, argv) {
     argv
   );
 
-  // Fix for deprecated constructor warning
-  config.devServer = {
-    ...config.devServer,
-    open: true,
-  };
-
-  // Fix for filter type error
-  if (config.module && config.module.rules) {
-    config.module.rules.forEach(rule => {
-      if (rule.oneOf) {
-        rule.oneOf.forEach(oneOfRule => {
-          if (oneOfRule.use && Array.isArray(oneOfRule.use)) {
-            oneOfRule.use.forEach(loader => {
-              if (loader.options && loader.options.presets) {
-                // Ensure plugins array exists
-                loader.options.plugins = loader.options.plugins || [];
-              }
-            });
-          }
-        });
-      }
-    });
+  // Simplified fix for deprecated constructor warning
+  if (config.devServer) {
+    config.devServer = {
+      ...config.devServer,
+      open: true,
+    };
   }
 
+  // DO NOT MODIFY config.module.rules to avoid filter type errors
+  
   return config;
 };

@@ -49,16 +49,16 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   header: {
-    fontSize: 24,
+    fontSize: 28, // Increased from 24
     fontWeight: 'bold',
     color: colors.primary,
-    marginBottom: 20,
+    marginBottom: 24, // Increased from 20
   },
   paragraph: {
-    fontSize: 16,
+    fontSize: 17, // Increased from 16
     color: colors.darkGrey,
-    marginBottom: 15,
-    lineHeight: 24,
+    marginBottom: 18, // Increased from 15
+    lineHeight: 26, // Increased from 24
   },
   buttonContainer: {
     paddingVertical: 20,
@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: colors.white,
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 18, // Increased from 16
+    letterSpacing: 0.5,
   },
 });
 

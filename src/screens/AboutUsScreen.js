@@ -43,23 +43,23 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   header: {
-    fontSize: 24,
+    fontSize: 28, // Increased from 24
     fontWeight: 'bold',
     color: colors.primary,
-    marginBottom: 20,
+    marginBottom: 24, // Increased from 20
   },
   subheader: {
-    fontSize: 20,
+    fontSize: 22, // Increased from 20
     fontWeight: 'bold',
     color: colors.primary,
-    marginTop: 20,
-    marginBottom: 10,
+    marginTop: 24, // Increased from 20
+    marginBottom: 12, // Increased from 10
   },
   paragraph: {
-    fontSize: 16,
+    fontSize: 17, // Increased from 16
     color: colors.darkGrey,
-    marginBottom: 10,
-    lineHeight: 24,
+    marginBottom: 14, // Increased from 10
+    lineHeight: 26, // Increased from 24
   },
 });
 

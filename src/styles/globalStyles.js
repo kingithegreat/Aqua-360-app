@@ -8,6 +8,7 @@ export const colors = {
   grey: '#AAAAAA',
   lightGrey: '#F5F5F5',
   placeholderText: '#CCCCCC',
+  textDark: '#222222', // Darker text for better contrast
 };
 
 const globalStyles = StyleSheet.create({
@@ -41,28 +42,45 @@ const globalStyles = StyleSheet.create({
   },
   buttonText: {
     color: colors.white,
-    fontSize: 16,
+    fontSize: 18, // Increased from 16
     fontWeight: 'bold',
+    letterSpacing: 0.5, // Adds slight spacing between letters
   },
   input: {
     borderWidth: 1,
     borderColor: colors.grey,
     borderRadius: 5,
-    padding: 10,
+    padding: 12, // Increased padding for text input
     marginBottom: 15,
     backgroundColor: colors.white,
+    fontSize: 16, // Explicit font size for inputs
   },
   header: {
-    fontSize: 24,
+    fontSize: 26, // Increased from 24
     color: colors.white,
     fontWeight: 'bold',
     marginBottom: 20,
     textAlign: 'center',
+    letterSpacing: 0.5,
   },
   text: {
-    fontSize: 16,
+    fontSize: 17, // Increased from 16
     color: colors.white,
-    marginBottom: 10,
+    marginBottom: 12, // Increased from 10
+    lineHeight: 24, // Added line height for better readability
+  },
+  // Adding more global text styles for consistency
+  labelText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: colors.primary,
+    marginBottom: 8,
+  },
+  paragraphText: {
+    fontSize: 17,
+    lineHeight: 26,
+    color: colors.darkGrey,
+    marginBottom: 15,
   },
 });
 

@@ -106,7 +106,7 @@ const HomeScreen = ({ navigation }) => {
             onPress={() => navigation.navigate('Waiver')}
           >
             <Text style={styles.actionButtonIcon}>📝</Text>
-            <Text style={styles.actionButtonText}>Waiver</Text>
+            <Text style={styles.matchingButtonText}>Waiver</Text>
           </TouchableOpacity>
           
           {/* Review Button */}
@@ -115,7 +115,7 @@ const HomeScreen = ({ navigation }) => {
             onPress={() => navigation.navigate('Reviews')}
           >
             <Text style={styles.actionButtonIcon}>⭐</Text>
-            <Text style={styles.lightButtonText}>Review</Text>
+            <Text style={styles.matchingButtonText}>Review</Text>
           </TouchableOpacity>
           
           {/* AI Assistant Button */}
@@ -124,7 +124,7 @@ const HomeScreen = ({ navigation }) => {
             onPress={() => navigation.navigate('AI Assistant')}
           >
             <Text style={styles.actionButtonIcon}>🤖</Text>
-            <Text style={styles.actionButtonText}>AI Assistant</Text>
+            <Text style={styles.matchingButtonText}>AI Assistant</Text>
           </TouchableOpacity>
           
           {/* Book Now Button */}
@@ -133,13 +133,16 @@ const HomeScreen = ({ navigation }) => {
             onPress={() => navigation.navigate('Booking')}
           >
             <Text style={styles.actionButtonIcon}>📅</Text>
-            <Text style={styles.lightButtonText}>Book Now</Text>
+            <Text style={styles.matchingButtonText}>Book Now</Text>
           </TouchableOpacity>
         </View>
         
         {/* Review Carousel - Replacing Latest News */}
         <View style={styles.reviewCarouselSection}>
-          <Text style={styles.sectionTitle}>What Our Customers Say</Text>
+          <View style={styles.sectionTitleContainer}>
+            <Text style={styles.sectionTitle}>CUSTOMER TESTIMONIALS</Text>
+            <View style={styles.sectionTitleUnderline}></View>
+          </View>
           <View style={styles.reviewCarousel}>
             <View style={styles.reviewCard}>
               <View style={styles.reviewHeader}>
@@ -174,8 +177,8 @@ const HomeScreen = ({ navigation }) => {
         {/* Footer */}
         <View style={styles.footer}>
           <Text style={styles.footerText}>© 2023 Aqua 360. All rights reserved.</Text>
-          <Text style={styles.footerText}>123 Splash Avenue, Watertown, WA 98765</Text>
-          <Text style={styles.footerContact}>📞 (555) 123-4567</Text>
+          <Text style={styles.footerText}>1 The Mall, Mount Maunganui, Tauranga 3116</Text>
+          <Text style={styles.footerContact}>📞 021 AQUA (021 2782)</Text>
         </View>
       </ScrollView>
     </View>
@@ -211,7 +214,7 @@ const styles = StyleSheet.create({
   signUpButtonText: {
     color: colors.primary,
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 16, // Increased from 14
   },
   loginButton: {
     backgroundColor: 'transparent',
@@ -224,7 +227,7 @@ const styles = StyleSheet.create({
   loginButtonText: {
     color: colors.white,
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 16, // Increased from 14
   },
   scrollView: {
     flex: 1,
@@ -259,15 +262,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(33, 96, 90, 0.5)', // Lightened to 0.5 from 0.7
   },
   aboutUsTitle: {
-    fontSize: 28,
+    fontSize: 30, // Increased from 28
     fontWeight: 'bold',
     color: colors.white,
-    marginBottom: 8,
+    marginBottom: 10, // Increased from 8
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
   },
   aboutUsText: {
-    fontSize: 16,
+    fontSize: 18, // Increased from 16
     color: colors.white,
-    lineHeight: 22,
+    lineHeight: 26, // Increased from 22
+    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
   },
   actionButtonsGrid: {
     flexDirection: 'row',
@@ -281,20 +290,25 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     overflow: 'hidden',
     marginBottom: 15,
-    elevation: 4,
+    elevation: 8, // Increased for more prominence
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 15,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.4)', // Add subtle white border for glass effect
+    backgroundColor: 'rgba(33, 96, 90, 0.8)', // Updated to colors.primary with transparency
   },
   waiverButton: {
-    backgroundColor: '#3d8c8a', // Lighter tealfor stronger contrast
+    backgroundColor: 'rgba(33, 96, 90, 0.85)', // Updated to colors.primary with transparency
+    borderColor: 'rgba(255, 255, 255, 0.6)',
   },
   reviewButton: {
-    backgroundColor: '#5ad8da', // Brighter cyan
+    backgroundColor: 'rgba(33, 96, 90, 0.85)', // Updated to colors.primary with transparency
+    borderColor: 'rgba(255, 255, 255, 0.6)',
   },
   aboutUsButton: {
     backgroundColor: colors.secondary,
@@ -315,40 +329,87 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   assistantButton: {
-    backgroundColor: '#45a2a0', // Medium teal teal
+    backgroundColor: 'rgba(33, 96, 90, 0.85)', // Updated to colors.primary with transparency
+    borderColor: 'rgba(255, 255, 255, 0.6)',
   },
   bookButton: {
-    backgroundColor: '#6be7e8', // Light cyan cyan
+    backgroundColor: 'rgba(33, 96, 90, 0.85)', // Updated to colors.primary with transparency
+    borderColor: 'rgba(255, 255, 255, 0.6)',
   },
   actionButtonIcon: {
-    fontSize: 30,
-    marginBottom: 8,
-    color: colors.white, // Keep white for light backgrounds
+    fontSize: 34, // Increased from 32
+    marginBottom: 10,
+    color: colors.white,
+    textShadowColor: 'rgba(0, 0, 0, 0.4)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
   },
   actionButtonText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: colors.white, // Keep white for most buttons
+    color: colors.white,
     textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   lightButtonText: {
     fontSize: 18,
     fontWeight: 'bold',
     color: colors.primary,
     textAlign: 'center',
+    textShadowColor: 'rgba(255, 255, 255, 0.5)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 2,
+  },
+  matchingButtonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: colors.white,
+    textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.4)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   reviewCarouselSection: {
     marginBottom: 30,
+    marginTop: 10,
+    paddingVertical: 15,
+    borderRadius: 15,
+    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    paddingHorizontal: 15,
+  },
+  sectionTitleContainer: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  sectionTitle: {
+    fontSize: 24, // Increased from 22
+    fontWeight: 'bold',
+    color: colors.white,
+    textAlign: 'center',
+    letterSpacing: 1.5,
+    textShadowColor: 'rgba(0, 0, 0, 0.4)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
+  },
+  sectionTitleUnderline: {
+    width: 60,
+    height: 3,
+    backgroundColor: colors.white,
+    marginTop: 8,
+    borderRadius: 2,
   },
   reviewCarousel: {
     backgroundColor: colors.white,
     borderRadius: 12,
-    padding: 15,
-    elevation: 5,
+    padding: 20,
+    elevation: 8,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    marginHorizontal: 5,
   },
   reviewHeader: {
     flexDirection: 'row',
@@ -357,15 +418,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   reviewerName: {
-    fontSize: 18,
+    fontSize: 20, // Increased from 18
     fontWeight: 'bold',
     color: colors.primary,
   },
   reviewComment: {
-    fontSize: 16,
+    fontSize: 18, // Increased from 16
     fontStyle: 'italic',
     color: colors.darkGrey,
-    lineHeight: 22,
+    lineHeight: 26, // Increased from 22
     marginBottom: 15,
   },
   starContainer: {
@@ -406,7 +467,7 @@ const styles = StyleSheet.create({
   viewAllReviewsText: {
     color: colors.primary,
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 16, // Increased from 14
   },
   footer: {
     borderTopWidth: 1,
@@ -416,13 +477,13 @@ const styles = StyleSheet.create({
   },
   footerText: {
     color: colors.white,
-    fontSize: 12,
+    fontSize: 14, // Increased from 12
     marginBottom: 5,
     textAlign: 'center',
   },
   footerContact: {
     color: colors.white,
-    fontSize: 12,
+    fontSize: 14, // Increased from 12
     marginTop: 5,
   },
 });
