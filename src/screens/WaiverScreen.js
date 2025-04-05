@@ -6,24 +6,27 @@ const WaiverScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.waiverText}>
-        <Text style={styles.header}>Aqua 360 Waiver Form</Text>
+        <Text style={styles.header}>Aqua 360 Jet Ski Waiver Form</Text>
         <Text style={styles.paragraph}>
-          By signing this waiver, you acknowledge the inherent risks associated with water activities and agree to follow all safety guidelines.
+          By signing this waiver, you acknowledge the inherent risks associated with jet ski activities and water sports, and agree to follow all safety guidelines.
         </Text>
         <Text style={styles.paragraph}>
-          1. Participants must follow all posted rules and verbal instructions from staff.
+          1. Participants must follow all instructions from Aqua 360 staff at all times.
         </Text>
         <Text style={styles.paragraph}>
-          2. Children under 12 must be supervised by an adult at all times.
+          2. Participants must wear life jackets and any other provided safety equipment at all times.
         </Text>
         <Text style={styles.paragraph}>
-          3. No running, diving, or horseplay in the water park areas.
+          3. No reckless behavior or stunts that may endanger yourself or others are permitted.
         </Text>
         <Text style={styles.paragraph}>
-          4. Aqua 360 is not responsible for lost or stolen items.
+          4. Aqua 360 is not responsible for lost or damaged personal belongings.
         </Text>
         <Text style={styles.paragraph}>
-          5. Management reserves the right to refuse entry or remove anyone not complying with rules.
+          5. Participants must not operate jet skis under the influence of alcohol or drugs.
+        </Text>
+        <Text style={styles.paragraph}>
+          6. Management reserves the right to cancel activities due to unsafe weather conditions or to remove anyone not complying with safety regulations.
         </Text>
       </ScrollView>
       <View style={styles.buttonContainer}>

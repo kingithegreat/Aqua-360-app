@@ -21,19 +21,19 @@ const SAMPLE_REVIEWS = [
     id: 1,
     name: "Sarah J.",
     rating: 5,
-    comment: "Absolutely amazing experience! The wave pool was so much fun for the entire family."
+    comment: "Amazing jet ski tour around the bay! The guides were knowledgeable and made the experience unforgettable."
   },
   {
     id: 2,
     name: "Michael B.",
     rating: 4,
-    comment: "Great place to spend a hot day. The water slides were thrilling and the food was good too."
+    comment: "Great day out on the water. The jet skis were well-maintained and the safety briefing was thorough."
   },
   {
     id: 3,
     name: "Emma W.",
     rating: 5,
-    comment: "Perfect day out with the kids! The children's area is well designed and safe."
+    comment: "Perfect adventure for our family vacation. We saw dolphins during our tour which was incredible!"
   }
 ];
 
@@ -92,8 +92,7 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.imageOverlay}>
             <Text style={styles.aboutUsTitle}>About Us</Text>
             <Text style={styles.aboutUsText}>
-              Discover the ultimate water adventure at Aqua 360. We provide premium water experiences 
-              for all ages with state-of-the-art facilities and expert instructors.
+              Experience thrilling jet ski adventures with Aqua 360, Mount Maunganui's premium jet ski hire and tour service operating from the beautiful Pilot Bay.
             </Text>
           </View>
         </TouchableOpacity>
@@ -177,7 +176,7 @@ const HomeScreen = ({ navigation }) => {
         {/* Footer */}
         <View style={styles.footer}>
           <Text style={styles.footerText}>© 2023 Aqua 360. All rights reserved.</Text>
-          <Text style={styles.footerText}>1 The Mall, Mount Maunganui, Tauranga 3116</Text>
+          <Text style={styles.footerText}>Pilot Bay, Mount Maunganui, Tauranga 3116</Text>
           <Text style={styles.footerContact}>📞 021 AQUA (021 2782)</Text>
         </View>
       </ScrollView>
