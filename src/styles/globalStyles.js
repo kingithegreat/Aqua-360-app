@@ -31,12 +31,6 @@ const globalStyles = StyleSheet.create({
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
   },
-  logo: {
-    width: 100,
-    height: 100,
-    alignSelf: 'center',
-    marginBottom: 15,
-  },
   button: {
     backgroundColor: colors.primary,
     paddingVertical: 12,
@@ -47,21 +41,6 @@ const globalStyles = StyleSheet.create({
   },
   buttonText: {
     color: colors.white,
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  secondaryButton: {
-    backgroundColor: colors.white,
-    borderColor: colors.primary,
-    borderWidth: 1,
-    paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginVertical: 10,
-  },
-  secondaryButtonText: {
-    color: colors.primary,
     fontSize: 16,
     fontWeight: 'bold',
   },
@@ -80,42 +59,10 @@ const globalStyles = StyleSheet.create({
     marginBottom: 20,
     textAlign: 'center',
   },
-  subHeader: {
-    fontSize: 20,
-    color: colors.primary,
-    fontWeight: 'bold',
-    marginVertical: 10,
-  },
   text: {
     fontSize: 16,
     color: colors.white,
     marginBottom: 10,
-  },
-  card: {
-    backgroundColor: colors.white,
-    borderRadius: 10,
-    padding: 15,
-    marginVertical: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  errorText: {
-    color: 'red',
-    fontSize: 14,
-    marginBottom: 10,
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: colors.primary,
-    marginVertical: 10,
   },
 });
 

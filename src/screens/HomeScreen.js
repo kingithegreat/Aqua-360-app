@@ -69,44 +69,23 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Welcome to Aqua 360</Text>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Booking')}>
-        <Text style={styles.buttonText}>Make a Booking</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AI Assistant')}>
-        <Text style={styles.buttonText}>Ask AI Assistant</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Reviews')}>
-        <Text style={styles.buttonText}>View Reviews</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('About Us')}>
-        <Text style={styles.buttonText}>About Us</Text>
-      </TouchableOpacity>
-      {/* Header with Sign Up and Login buttons */}
       <SafeAreaView style={styles.header}>
-        <TouchableOpacity 
-          onPress={() => navigation.navigate('SignUp')}
-          style={styles.signUpButton}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate('Sign Up')} style={styles.signUpButton}>
           <Text style={styles.signUpButtonText}>Sign Up</Text>
         </TouchableOpacity>
-        
-        <TouchableOpacity 
-          onPress={() => navigation.navigate('Login')}
-          style={styles.loginButton}
-        >
+        <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.loginButton}>
           <Text style={styles.loginButtonText}>Log In</Text>
         </TouchableOpacity>
       </SafeAreaView>
       
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
-        {/* About Us Card with Wetsuit Image */}
+        {/* About Us Card with Local Image */}
         <TouchableOpacity 
           style={styles.aboutUsCard}
-          onPress={() => navigation.navigate('AboutUs')}
+          onPress={() => navigation.navigate('About Us')}
         >
           <Image
-            source={{ uri: 'https://via.placeholder.com/400x300/21605A/ffffff?text=Aqua+360' }}
+            source={require('../../assets/images/about us image.webp')}
             style={styles.wetsuitImage}
             onError={() => console.log('Image load error')}
           />
@@ -142,7 +121,7 @@ const HomeScreen = ({ navigation }) => {
           {/* AI Assistant Button */}
           <TouchableOpacity 
             style={[styles.actionButton, styles.assistantButton]}
-            onPress={() => navigation.navigate('AIAssistant')}
+            onPress={() => navigation.navigate('AI Assistant')}
           >
             <Text style={styles.actionButtonIcon}>🤖</Text>
             <Text style={styles.actionButtonText}>AI Assistant</Text>
@@ -214,7 +193,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: Platform.OS === 'ios' ? 50 : 40,
     paddingBottom: 15,
-    paddingHorizontal: 30, // Increased from 20 to 30 for more side margin
+    paddingHorizontal: 20, // Changed from 30 to 20 to align with other content
+    marginHorizontal: 20, // Added horizontal margin to align with other components
     backgroundColor: 'transparent',
   },
   signUpButton: {
@@ -227,7 +207,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 2,
-    marginLeft: 10, // Added left margin
   },
   signUpButtonText: {
     color: colors.primary,
@@ -241,7 +220,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1,
     borderColor: colors.white,
-    marginRight: 10, // Added right margin
   },
   loginButtonText: {
     color: colors.white,

@@ -14,30 +14,55 @@ if (!fs.existsSync(packageJsonPath)) {
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 console.log('✓ package.json found');
 
-// Check dependencies
-const dependencies = [
-  'react-native',
-  'expo',
-  'metro',
-  'react-native-gesture-handler',
-  'react-native-screens'
+// Check app.json
+const appJsonPath = path.join(__dirname, 'app.json');
+if (!fs.existsSync(appJsonPath)) {
+  console.error('Error: app.json not found!');
+  process.exit(1);
+}
+
+console.log('✓ app.json found');
+
+// Check babel.config.js
+const babelConfigPath = path.join(__dirname, 'babel.config.js');
+if (!fs.existsSync(babelConfigPath)) {
+  console.error('Error: babel.config.js not found!');
+  process.exit(1);
+}
+
+console.log('✓ babel.config.js found');
+
+// Check key screens
+const requiredScreens = [
+  'HomeScreen.js',
+  'BookingScreen.js',
+  'AIAssistantScreen.js',
+  'ReviewsScreen.js',
+  'AboutUsScreen.js',
+  'WaiverScreen.js',
+  'SignUpScreen.js',
+  'LoginScreen.js'
 ];
 
-dependencies.forEach(dep => {
-  try {
-    require.resolve(dep);
-    console.log(`✓ ${dep} is installed`);
-  } catch {
-    console.error(`✗ ${dep} is missing`);
+requiredScreens.forEach(screen => {
+  const screenPath = path.join(__dirname, 'src', 'screens', screen);
+  if (!fs.existsSync(screenPath)) {
+    console.error(`Error: ${screen} not found!`);
+  } else {
+    console.log(`✓ ${screen} found`);
   }
 });
 
-// Check Metro configuration
-const metroConfigPath = path.join(__dirname, 'metro.config.js');
-if (!fs.existsSync(metroConfigPath)) {
-  console.error('Error: metro.config.js not found!');
+// Check for node_modules
+const nodeModulesPath = path.join(__dirname, 'node_modules');
+if (!fs.existsSync(nodeModulesPath)) {
+  console.log('✗ node_modules not found, dependencies need to be installed');
+  console.log('  Run: npm install');
 } else {
-  console.log('✓ metro.config.js found');
+  console.log('✓ node_modules found');
 }
 
-console.log('Diagnostics completed.');
+console.log('\nDiagnostics completed.');
+console.log('If all checks passed, try running: npm start');
+console.log('If there are missing files, they need to be created.');
+console.log('If node_modules is missing, run: npm install');

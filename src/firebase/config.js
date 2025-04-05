@@ -1,4 +1,4 @@
-// Extremely simple mock implementation of Firebase
+// This is just a mock implementation of Firebase - not a real database connection
 
 // Basic mock auth implementation
 export const auth = {

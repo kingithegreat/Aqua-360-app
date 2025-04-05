@@ -1,11 +1,19 @@
 {
   "expo": {
     "name": "Aqua 360",
-    "slug": "aqua360",
+    "slug": "aqua360app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "backgroundColor": "#21605A",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#21605A"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -14,8 +22,12 @@
     },
     "android": {
       "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#21605A"
       }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     }
   }
 }
